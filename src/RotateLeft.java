@@ -1,9 +1,12 @@
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
+/**
+ * This is a coding challenge from HackerRank as part of the
+ *
+ * https://www.hackerrank.com/challenges/ctci-array-left-rotation/problem
+ */
 public class RotateLeft {
 
     public static void main(String[] args) {
@@ -12,11 +15,17 @@ public class RotateLeft {
         rotateLeft(7, list);
     }
 
-    // Complete the twoStrings function below.
-    public static List<Integer> rotateLeft(int d, List<Integer> arr) {
-        LinkedList<Integer> linkedList = new LinkedList<>(arr);
+    /**
+     * This rotates a list a given number and returns a new list
+     *
+     * @param numberToRotateLeft - Number to rotate the List left
+     * @param integerList - List of Integers that needs to be rotated
+     * @return linkedList - Newly created and rotated list
+     */
+    public static List<Integer> rotateLeft(int numberToRotateLeft, List<Integer> integerList) {
+        LinkedList<Integer> linkedList = new LinkedList<>(integerList);
 
-        for (int i=0; i< d; i++) {
+        for (int i=0; i< numberToRotateLeft; i++) {
             Integer toMove = linkedList.getFirst();
             linkedList.remove(toMove);
             linkedList.add(toMove);
